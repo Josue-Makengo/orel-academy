@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orel Academy</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="js/app.js" defer></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="brand__logo">O</div>
+          <span>Orel Academy</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Changer le thème">
+            <i id="themeIcon" class="fa-solid fa-sun"></i>
+          </button>
+          <div class="links">
+            <a href="#">Développement web</a>
+            <a href="#">Télécommunications</a>
+            <a href="#">Articles</a>
+            <a href="#">Cours</a>
+          </div>
+          <button class="icon-btn burger" id="burgerBtn" aria-label="Menu mobile">
+            <i id="burgerIcon" class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="icon-btn" id="closeMenu" aria-label="Fermer le menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#">Développement web</a>
+    <a href="#">Télécommunications</a>
+    <a href="#">Articles</a>
+    <a href="#">Cours</a>
+  </aside>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Bienvenue sur Orel Academy</h1>
+      <p>
+        Ici, nous partageons des ressources sur le développement web, les télécommunications,
+        ainsi que des articles et cours pratiques pour t’aider à progresser.
+      </p>
+      <div class="btns">
+        <button class="btn btn--primary">Découvrir Orel Academy</button>
+        <button class="btn btn--ghost">Nos dernières publications</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main>
+    <section>
+      <h2>Nos publications</h2>
+      <div class="grid" id="cardsGrid">
+        <!-- Les cartes sont générées par script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Orel Academy. Tous droits réservés.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:contact@oreacademy.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction au HTML5",
+    "desc": "Les bases du HTML5 et comment structurer une page web.",
+    "author": "Josue Makengo",
+    "date": "20/09/2025",
+    "category": "Développement web",
+    "image": "images/photo1.jpg",
+    "link": "publication1.html"
+  },
+  {
+    "id": 2,
+    "title": "VSAT expliqué simplement",
+    "desc": "Découvrez le fonctionnement d’un terminal VSAT dans les télécommunications.",
+    "author": "Josue Makengo",
+    "date": "21/09/2025",
+    "category": "Télécommunication",
+    "image": "images/photo2.jpg",
+    "link": "publication2.html"
+  }
+]
