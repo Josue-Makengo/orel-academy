@@ -260,7 +260,7 @@ footer {
 
 .socials a {
   margin-left: .5rem;
-  color: var(--text);
+  color: var(--bg);
   text-decoration: none;
 }
 

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orel Academy</title>
+  <link rel="stylesheet" href="accessibilite.css">
+  <script src="js/app.js" defer></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="brand__logo">O</div>
+          <span>Orel Academy</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Changer le thème">
+            <i id="themeIcon" class="fa-solid fa-sun"></i>
+          </button>
+          <div class="links">
+            <a href="#">Développement web</a>
+            <a href="#">Télécommunications</a>
+            <a href="#">Articles</a>
+            <a href="#">Cours</a>
+          </div>
+          <button class="icon-btn burger" id="burgerBtn" aria-label="Menu mobile">
+            <i id="burgerIcon" class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="icon-btn" id="closeMenu" aria-label="Fermer le menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#">Développement web</a>
+    <a href="#">Télécommunications</a>
+    <a href="#">Articles</a>
+    <a href="#">Cours</a>
+  </aside>
+  <section class="hero">
+    <div class="conteneur">
+      <h1 class="article-title">Pourquoi l’accessibilité avec le HTML et le CSS est-elle essentielle dans le web moderne ?</h1>
+      <p class="intro">
+        Lorsque vous concevez un site web, il est essentiel de penser d’abord à sa structure, à son “squelette”.
+        Ce squelette définit les différentes zones de la page — la navigation, le contenu principal, les informations complémentaires, etc.
+        Mais comment faire pour que chaque partie soit compréhensible, non seulement pour les visiteurs, mais aussi pour les technologies d’assistance ?
+      </p>
+    </div>
+  </section>
+
+  <main class="content conteneur">
+    <section>
+      <h2>1. Comprendre la sémantique HTML</h2>
+      <p>
+        La <strong>sémantique</strong> désigne le sens ou le rôle que l’on donne aux éléments du code.
+        Grâce au <strong>HTML5</strong>, de nouvelles balises sémantiques permettent de structurer logiquement une page web :
+      </p>
+      <ul>
+        <li><code>&lt;header&gt;</code> : en-tête du site ou de la section</li>
+        <li><code>&lt;nav&gt;</code> : zone de navigation</li>
+        <li><code>&lt;main&gt;</code> : contenu principal</li>
+        <li><code>&lt;section&gt;</code> : partie de contenu thématique</li>
+        <li><code>&lt;article&gt;</code> : contenu indépendant</li>
+        <li><code>&lt;aside&gt;</code> : informations secondaires</li>
+        <li><code>&lt;footer&gt;</code> : pied de page</li>
+      </ul>
+      <p>
+        En utilisant ces balises correctement, on aide les navigateurs et les lecteurs d’écran à mieux comprendre la hiérarchie du contenu.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Les attributs et leur importance</h2>
+      <p>
+        Un <strong>attribut</strong> sert à ajouter une information ou une propriété à une balise :
+      </p>
+      <pre><code>&lt;a href="index.html" title="Retour à la page d'accueil"&gt;Accueil&lt;/a&gt;</code></pre>
+      <p>
+        Mais au-delà des attributs standards, il existe des attributs destinés à <strong>améliorer l’accessibilité</strong> : les <strong>ARIA</strong> (<em>Accessible Rich Internet Applications</em>).
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Le rôle des attributs ARIA</h2>
+      <p>
+        Les attributs <strong>ARIA</strong> permettent de décrire la nature, l’état et le rôle d’un élément dans la page, afin d’aider les personnes utilisant des technologies d’assistance.
+      </p>
+      <ul>
+        <li><code>aria-label</code> : donne un nom invisible mais lisible par un lecteur d’écran</li>
+        <li><code>aria-labelledby</code> : relie une zone à une étiquette existante</li>
+        <li><code>aria-current="page"</code> : indique le lien correspondant à la page actuelle</li>
+        <li><code>aria-haspopup="true"</code> : informe qu’un élément déclenche un sous-menu ou une fenêtre</li>
+      </ul>
+      <p>Exemple :</p>
+      <pre><code>&lt;nav aria-label="Menu principal"&gt;...&lt;/nav&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>4. Le rôle du CSS dans l’accessibilité</h2>
+      <p>
+        Même si le <strong>CSS</strong> ne sert pas directement aux technologies d’assistance, il joue un rôle clé dans
+        <strong>l’accessibilité visuelle</strong>. Les effets de survol (<code>:hover</code>) ou de focus (<code>:focus</code>)
+        aident les utilisateurs à identifier les actions possibles sur la page.
+      </p>
+      <pre><code>
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: 3px solid #ffcc00;
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>5. Exemple pratique</h2>
+      <p>
+        Voici un exemple de page comportant deux menus de navigation, chacun clairement identifié :
+      </p>
+      <pre><code>
+&lt;nav aria-label="Navigation principale"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav aria-label="Navigation secondaire"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="faq.html"&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+      </code></pre>
+    </section>
+
+    <section class="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        L’accessibilité web n’est pas un détail technique : c’est une <strong>responsabilité</strong> et une
+        <strong>bonne pratique de conception</strong>. En combinant la sémantique HTML, les attributs ARIA et un CSS bien pensé,
+        on rend le web plus inclusif, plus clair et plus agréable pour tous.
+      </p>
+    </section>
+
+    
+  </main>
+
+   <footer>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Orel Academy. Tous droits réservés.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:contact@oreacademy.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
