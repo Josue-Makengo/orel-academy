@@ -1,46 +1,51 @@
+/* ==============================
+   Base et variables
+============================== */
 :root {
-  --brand-1: #00A8E8;
-  --brand-2: #002855;
-  --white: #ffffff;
-  --muted: #6b7280;
-  --card-radius: 12px;
-  --glass: rgba(255, 255, 255, 0.06);
-  --bg: #f7fbff;
-  --text: #06283d;
-  --card-bg: #fff;
-  --shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
+  --primary-color: #2563eb;
+  --accent-color: #0056b3;
+  --text: #222;
+  --bg: #ffffff;
+  --card-bg: #f5f5f5;
+  --glass: rgba(0,0,0,0.05);
+  --white: #fff;
+  --brand-1: #2563eb;
+  --brand-2: #1e3a8a;
 }
 
-.dark {
-  --bg: #000a15;
-  --text: #e6eef8;
-  --card-bg: #071226;
-  --muted: #9aa8bf;
-  --glass: rgba(255, 255, 255, 0.04);
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+/* Mode sombre */
+[data-theme=".dark"] {
+  --text: #f1f5f9;
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --glass: rgba(255,255,255,0.05);
 }
 
-.dark #themeIcon,
-.dark #burgerIcon,
-.dark #closeMenu i {
-  color: #ffffff;
-}
-
-/* Reset */
-* { 
-box-sizing: border-box; 
-margin: 0; 
-padding: 0; 
-}
-html, body { height: 100%; }
 body {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: var(--bg) ;
+  background: var(--bg);
   color: var(--text);
-  transition: background 0.5s ease, color 0.5s ease;
-  padding-bottom: 80px;
 }
 
+
+/* ==============================
+   Reset de base
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* ==============================
+   Navigation
+============================== */
 header {
   position: sticky;
   top: 0;
@@ -95,13 +100,14 @@ nav {
   border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
+  color: var(--text);
 }
 
 .icon-btn:focus {
   outline: 2px solid var(--brand-1);
 }
 
-/* Liens de navigation */
+/* Liens */
 .links {
   display: flex;
   gap: 1rem;
@@ -119,127 +125,139 @@ nav {
   background: var(--glass);
 }
 
+/* 🍔 Menu burger */
 .burger {
   display: none;
 }
 
-/* === Conteneur central === */
-.conteneur {
-  width: 90%;
-  max-width: 900px;
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: var(--card-bg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: right 0.3s ease;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+/* ==============================
+   Section Hero
+============================== */
+.hero {
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  color: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* === En-tête === */
-.hero {
-  background: linear-gradient(135deg, #0078d4, #00a2ff);
-  color: white;
-  padding: 3rem 0;
-  text-align: center;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+/* ==============================
+   Contenu principal
+============================== */
+main.content {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
 }
 
-.article-title {
-  font-size: 1.8rem;
+main h2 {
+  color: var(--primary-color);
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  font-weight: bold;
+  font-size: 1.6rem;
 }
 
-.intro {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* === Sections principales === */
-.content section {
-  margin-top: 2rem;
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.content h2 {
-  color: #0078d4;
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+main p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
 
 ul {
-  margin: 1rem 0;
-  padding-left: 1.2rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
-pre {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin-top: 1rem;
+li {
+  margin-bottom: 0.5rem;
 }
 
 code {
-  font-family: Consolas, monospace;
-  color: #c7254e;
+  background-color: var(--secondary-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
 }
 
-/* === Conclusion === */
-.conclusion {
-  border-left: 4px solid #0078d4;
-  background-color: #f0f9ff;
-}
-
-/* === Appel à l’action === */
-.cta {
-  text-align: center;
-  margin-top: 2rem;
-  background: #0078d4;
-  color: white;
+pre {
+  background-color: var(--secondary-bg);
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
 }
 
-.cta-link {
-  color: #fff;
-  text-decoration: underline;
-  font-weight: bold;
+/* ==============================
+   Conclusion
+============================== */
+.conclusion {
+  background-color: var(--secondary-bg);
+  border-left: 5px solid var(--primary-color);
+  padding: 1.5rem;
+  margin-top: 2.5rem;
+  border-radius: 8px;
 }
 
-.cta-link:hover {
-  text-decoration: none;
+.conclusion h2 {
+  margin-bottom: 1rem;
 }
 
-/* === Pied de page === */
+/* Footer */
 footer {
-  margin-top: 2rem;
-  padding: 1.25rem 0;
-  border-top: 2px solid rgba(63, 61, 61, 0.06);
-  color: var(--muted);
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.socials a {
-  margin-left: .5rem;
-  color: var(--bg);
-  text-decoration: none;
-}
-
-
-/* === Responsive === */
-@media (max-width: 600px) {
-  .article-title {
-    font-size: 1.4rem;
+/*Responsivité */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
   }
-
-  .content section {
-    padding: 1rem;
+  main.content {
+    padding: 0 1rem;
+  }
+  .navbar {
+    flex-direction: column;
   }
 }

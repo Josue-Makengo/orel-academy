@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orel Academy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pourquoi l’accessibilité avec le HTML et le CSS est essentielle — Orel Academy</title>
   <link rel="stylesheet" href="accessibilite.css">
-  <script src="js/app.js" defer></script>
-  <!-- Font Awesome -->
+  <script src="../../js/app.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
       <nav>
@@ -18,6 +16,7 @@
           <div class="brand__logo">O</div>
           <span>Orel Academy</span>
         </div>
+
         <div class="nav-actions">
           <button class="icon-btn" id="themeToggle" aria-label="Changer le thème">
             <i id="themeIcon" class="fa-solid fa-sun"></i>
@@ -36,7 +35,7 @@
     </div>
   </header>
 
-  <!-- Menu mobile -->
+  <!-- 📱 Menu mobile -->
   <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <button class="icon-btn" id="closeMenu" aria-label="Fermer le menu">
       <i class="fa-solid fa-xmark"></i>
@@ -46,6 +45,9 @@
     <a href="#">Articles</a>
     <a href="#">Cours</a>
   </aside>
+
+
+  <!-- Hero (titre d'article) -->
   <section class="hero">
     <div class="conteneur">
       <h1 class="article-title">Pourquoi l’accessibilité avec le HTML et le CSS est-elle essentielle dans le web moderne ?</h1>
@@ -57,7 +59,8 @@
     </div>
   </section>
 
-  <main class="content conteneur">
+  <!-- Main content (ton article) -->
+  <main class="content conteneur" role="main">
     <section>
       <h2>1. Comprendre la sémantique HTML</h2>
       <p>
@@ -152,13 +155,12 @@ button:focus {
         on rend le web plus inclusif, plus clair et plus agréable pour tous.
       </p>
     </section>
-
-    
   </main>
 
-   <footer>
+  <!-- Footer (identique à la page d'accueil) -->
+  <footer>
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Orel Academy. Tous droits réservés.</p>
+      <div>© <span id="year"></span> Orel Academy — Tous droits réservés</div>
       <div class="socials">
         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         <a href="#"><i class="fa-brands fa-github"></i></a>
